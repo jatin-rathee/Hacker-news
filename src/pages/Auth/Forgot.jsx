@@ -1,5 +1,5 @@
 import React from 'react'
-import { IonPage, IonContent, IonLabel, IonInput, IonItem, IonRow, IonCol, IonButton } from '@ionic/react'
+import { IonPage, IonContent, IonLabel, IonInput, IonItem, IonRow, IonCol, IonButton, IonLoading } from '@ionic/react'
 import NavHeader from '../../components/Header/NavHeader'
 import validatePasswordReset from '../../validators/validatePasswordReset'
 
@@ -26,11 +26,13 @@ const Forgot = () => {
             console.error("Password Reset Error", err)
             toast(err.message)
         }
+        setBusy(false)
     }
 
     return (
         <IonPage>
             <NavHeader title='Password Reset'/>
+            <IonLoading message={"Please wait..."} isOpen={busy} />
             <IonContent>
                 <IonItem lines="full">
                     <IonLabel position='floating'>Email</IonLabel>
