@@ -17,14 +17,14 @@ import {
 	timeOutline,
 } from "ionicons/icons";
 import { getHostName } from "../../helpers/domain";
-import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
-const LinkItem = ({ link, index, showCount, url }) => {
+const LinkItem = ({ link, index, showCount, url, browser }) => {
 	return (
-		<IonCard routerLink={url} button>
+		<IonCard routerLink={url} onClick={browser} button>
 			<IonCardContent className="ion-no-padding">
-				<IonList line="none">
-					<IonItem>
+				<IonList>
+					<IonItem lines="none">
 						<IonBadge style={{ verticalAlign: "middle" }} slot="start">
 							{showCount && index}
 						</IonBadge>
@@ -79,7 +79,6 @@ const LinkItem = ({ link, index, showCount, url }) => {
 								<IonText style={{ verticalAlign: "middle" }}>
 									{formatDistanceToNow(link.created)}
 								</IonText>
-
 								{link.comments.length > 0 && (
 									<>
 										{" | "}

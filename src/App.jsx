@@ -27,6 +27,7 @@ import Login from "./pages/Auth/Login";
 import SignUp from "./pages/Auth/SignUp";
 import Forgot from "./pages/Auth/Forgot";
 import EditProfile from './pages/Auth/EditProfile'
+import Link from './pages/Link'
 
 import useAuth from "./hooks/useAuth";
 import UserContext from "./context/UserContext";
@@ -65,10 +66,11 @@ const App = () => {
               <Route path="/submit" component={Submit} />
               <Route path="/search" component={Search} />
               <Route path="/profile" component={Profile} />
+              <Route path="/edit-profile" component={EditProfile} />
               <Route path="/login" component={Login} />
               <Route path="/signup" component={SignUp} />
               <Route path="/forgot" component={Forgot} />
-              <Route path="/edit-profile" component={EditProfile} />
+              <Route path="/link/:linkId" component={Link} />
               <Route component={() => <Redirect to="/news" />} />
             </IonRouterOutlet>
             <IonTabBar slot="bottom">
