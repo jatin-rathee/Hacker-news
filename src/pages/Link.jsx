@@ -27,6 +27,7 @@ const Link = (props) => {
 
 	React.useEffect(() => {
 		getLink();
+		// eslint-disable-next-line
 	}, [linkId]);
 
 	function getLink() {

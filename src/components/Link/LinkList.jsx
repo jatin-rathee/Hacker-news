@@ -10,6 +10,7 @@ const LinkList = (props) => {
 	React.useEffect(() => {
 		const unsubscribe = getLinks();
 		return () => unsubscribe();
+		// eslint-disable-next-line
 	}, [isTrending]);
 
 	function getLinks() {
